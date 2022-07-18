@@ -42,3 +42,13 @@ func TestRect_Perimeter(t *testing.T) {
 		t.Errorf("got %f want %f", got, want)
 	}
 }
+
+func ExampleRect_Perimeter() {
+	r := Rect{
+		width:  5,
+		height: 10,
+	}
+	perimeter := r.Perimeter()
+	fmt.Println(perimeter)
+	// Output: 30
+}
