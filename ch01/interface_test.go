@@ -30,3 +30,28 @@ func ExampleTotalArea() {
 	fmt.Println(totalArea)
 	// Output: 1272.6370614359173
 }
+
+func TestTotalPerimeter(t *testing.T) {
+	r := Rect{
+		width:  4,
+		height: 4,
+	}
+	c := Circle{Radius: 10}
+	got := TotalPerimeter(r, c)
+	want := (4+4)*2 + 2*10*math.Pi
+
+	if got != want {
+		t.Errorf("got %f want %f", got, want)
+	}
+}
+
+func ExampleTotalPerimeter() {
+	r := Rect{
+		width:  4,
+		height: 4,
+	}
+	c := Circle{Radius: 10}
+	totalPerimeter := TotalPerimeter(r, c)
+	fmt.Println(totalPerimeter)
+	// Output: 78.83185307179586
+}
